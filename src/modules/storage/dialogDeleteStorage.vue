@@ -1,0 +1,56 @@
+<template>
+  <v-dialog v-model="value" persistent max-width="500">
+    <v-card>
+      <v-card-title class="headline font-weight-bold font--text">
+        Delete {{storage.name}} from Instance?
+      </v-card-title>
+      <v-card-text>
+        Warning: If you delete this volume, all of your data will be lost
+        forever, and you will not be charged for it going forward
+      </v-card-text>
+      <v-card-text>
+        <p class="font-weight-bold">Are you sure you want to proceed?</p>
+      </v-card-text>
+      <v-card-actions>
+        <v-row class="ma-2">
+          <v-col cols="6">
+            <v-btn
+            depressed
+              height="50"
+              color="accent"
+              block
+              @click="
+                () => {
+                  $emit('close');
+                }
+              "
+            >
+              <b>Cancel</b>
+            </v-btn>
+          </v-col>
+          <v-col cols="6">
+            <v-btn
+            depressed
+              height="50"
+              color="error"
+              block
+              @click="
+                () => {
+                  $emit('confirm');
+                  $emit('close');
+                }
+              "
+            >
+              <b>Confirm</b>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</template>
+<script>
+export default {
+  props: ["value","storage"],
+};
+</script>

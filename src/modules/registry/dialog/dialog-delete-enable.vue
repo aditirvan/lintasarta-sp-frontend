@@ -1,0 +1,120 @@
+<template>
+  <div>
+    <v-dialog persistent v-model="tutup" max-width="500">
+      <v-card class="pt-7 rounded-lg">
+        <v-card-text>
+          <div class="d-flex flex-row">
+            <v-icon left>$vuetify.icons.alertcircleIcon</v-icon>
+            <p
+              v-if="actionText == 'delete'"
+              class="fz-18 font-weight-bold mb-0"
+            >
+              Delete Rule
+            </p>
+            <p v-else class="fz-18 font-weight-bold mb-0">
+              {{ rowData.disabled ? "Enable Rule" : "Disable Rule" }}
+            </p>
+          </div>
+        </v-card-text>
+        <v-card-text>
+          <div class="text-center mt-2">
+            <p v-if="actionText == 'delete'" class="mb-0 text-h6">
+              Do you want to delete this Rule ?
+            </p>
+            <p v-else class="mb-0 text-h6">
+              {{
+                rowData.disabled
+                  ? "Do you want to Enable this Rule ? "
+                  : "Do you want to Disable this Rule ?"
+              }}
+            </p>
+          </div>
+        </v-card-text>
+        <v-card-text>
+          <v-row class="d-flex justify-end">
+            <v-col class="d-flex flex-row justify-center" cols="3">
+              <v-btn
+                color="#CDCDCD"
+                depressed
+                block
+                height="35"
+                @click="onCancel()"
+              >
+                Cancel
+              </v-btn>
+            </v-col>
+            <v-col class="d-flex flex-row justify-center" cols="3">
+              <v-btn
+                color="primary"
+                depressed
+                block
+                height="35"
+                @click="onConfirm(actionText,rowData)"
+              >
+                Confirm
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+  </div>
+</template>
+
+<script>
+import {
+  useNamespacedActions,
+  useNamespacedGetters,
+} from "vuex-composition-helpers";
+import { ref } from "@vue/composition-api";
+import { REGISTRY } from "../namespace";
+export default {
+  props: {
+    tutup: {
+      type: Boolean,
+      default: false,
+    },
+    actionText: {
+      type: String,
+      default: "",
+    },
+    rowData: {
+      type: Object,
+      default: () => {},
+    },
+  },
+  setup() {
+    
+    const {updateTagImmutable,deleteTagImmutable} = useNamespacedActions(
+      REGISTRY,
+      ["updateTagImmutable","deleteTagImmutable"]
+    );
+    function onConfirm(value,rowDatas) { 
+      if(value=="delete"){
+        deleteTagImmutable(rowDatas)
+      this.$emit("update:tutup", false);
+      }else{
+        if(rowDatas.disabled){
+        rowDatas.disabled=false
+        }else{
+        rowDatas.disabled=true
+        }
+        updateTagImmutable(rowDatas)
+      this.$emit("update:tutup", false);
+      }
+    }
+    function onCancel() {
+      this.$emit("update:tutup", false);
+    }
+    return {
+      onCancel,
+      onConfirm,
+      updateTagImmutable,
+      deleteTagImmutable,
+    };
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+</style>

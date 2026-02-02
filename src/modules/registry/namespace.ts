@@ -1,0 +1,2 @@
+export const REGISTRY = 'REGISTRY'
+export const REGISTRYBILLING = 'REGISTRYBILLING'

@@ -1,0 +1,173 @@
+html {
+  font-size: 14px;
+}
+input {
+  font-size: 14px;
+}
+.v-btn {
+  text-transform: none;
+}
+
+.dataTable {
+  font-size: 15px !important;
+}
+table.v-table thead th {
+  font-size: 16px;
+}
+/* also tried table.v-table thead tr th { . */
+table.v-table tbody tr td {
+  font-size: 16px;
+  height: 15px;
+  padding: 0px;
+}
+
+.v-data-table-header th.sortable {
+  background-color: #f1f2f2;
+}
+
+table th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+table th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+th {
+  color: #556272 !important;
+  font-weight: 700 !important;
+  background-color: #f1f2f2 !important;
+}
+
+.v-tab {
+  text-transform: none !important;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+}
+.v-btn__content {
+  text-transform: none !important;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.dotblue {
+  border-radius: 50%;
+  height: 21px;
+  width: 21px;
+  background: #1f60a8;
+  margin-right: 10px;
+}
+
+.v-application {
+  font-family: "Fira sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #556272;
+}
+
+a {
+  text-decoration: none;
+}
+
+.v-text-field--filled > .v-input__control > .v-input__slot,
+.v-text-field--full-width > .v-input__control > .v-input__slot,
+.v-text-field--outlined > .v-input__control > .v-input__slot {
+  min-height: 50px;
+}
+
+.v-input .v-label {
+  line-height: 16px;
+}
+.v-text-field__slot input {
+  z-index: 2;
+}
+.v-text-field__details {
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+  height: 50%;
+}
+
+@font-face {
+  font-family: Mont;
+  src: url(../fonts/Mont-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Mont;
+  src: url(../fonts/Mont-Bold.ttf) format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.v-autocomplete:not(.v-input--is-focused).v-select--chips input {
+  max-height: 30px;
+}
+
+.otp-input-cloudeka {
+  width: 85px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #cad6e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.vs__search {
+  height: 40px !important;
+}
+
+.broadcast-pagination .v-pagination__item,
+.broadcast-pagination .v-pagination__navigation {
+  box-shadow: none !important;
+}
+
+.broadcast-pagination .v-icon {
+  font-style: normal;
+  font-size: small;
+}
+
+.broadcast-pagination {
+  border: 1px solid lightgray;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.markdown-editor .btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+}
+
+.markdown-editor .v-md-toolbar {
+  display: flex;
+}
+
+.markdown-editor button[title="Numbered List"] {
+  display: none;
+}
+
+.v-item-group.theme--light.v-slide-group.v-tabs-bar.v-tabs-bar--is-mobile.primary--text {
+  display: none;
+}

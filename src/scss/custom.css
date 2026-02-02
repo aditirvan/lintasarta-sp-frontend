@@ -1,0 +1,35 @@
+.flavor-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600 !important;
+  height: 60px;
+}
+
+.custom-flavor-card .v-label--active {
+  top: 10px !important;
+  font-weight: 600;
+}
+
+.flavor-card .v-card__text,
+.custom-flavor-card .v-card__text {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-flavor-card .v-input input {
+  font-weight: 600;
+  font-size: 16px;
+  color: #556272 !important;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.v-dialog {
+  width: 100%;
+}

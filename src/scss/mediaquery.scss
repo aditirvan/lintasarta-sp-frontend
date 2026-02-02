@@ -1,0 +1,19 @@
+.v-toolbar__items{
+    .navmenu{
+        margin-left: 10px;
+    }
+    p,.mdi-chevron-up,.mdi-chevron-down{
+        display: none;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .v-toolbar__items{
+        .navmenu{
+        margin-left: 20px;
+        margin-right: 20px;;
+        }
+        p,.mdi-chevron-up,.mdi-chevron-down{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+<template>
+	<v-container>
+		<div style="boder 1px solid blue">
+			<div class="dns-content">
+				MX records specify the mail servers responsible for accepting emails on
+				behalf of your domain, and priority value if your provider has a number
+				of mail servers for contingency.
+			</div>
+			<v-row class="pt-8">
+				<v-col cols="3">
+					<div class="domain-input-label">HOSTNAME</div>
+					<v-text-field
+						maxlength="50"
+						label="Enter @ or hostname"
+						single-line
+						outlined
+					></v-text-field>
+				</v-col>
+				<v-col cols="3">
+					<div class="domain-input-label">MAIL PROVIDERS MAIL SERVER</div>
+					<v-text-field
+						maxlength="50"
+						label="e.g aspmx.l.google.com"
+						single-line
+						outlined
+					></v-text-field>
+				</v-col>
+				<v-col cols="1.5">
+					<div class="domain-input-label">PRIORITY</div>
+					<v-text-field maxlength="50" label="e.g 10" single-line outlined></v-text-field>
+				</v-col>
+				<v-col cols="2">
+					<div class="domain-input-label">TTL (SECONDS)</div>
+					<v-text-field maxlength="50" label="Enter TTL" single-line outlined></v-text-field>
+				</v-col>
+				<v-col cols="2">
+					<div class="pt-7">
+						<v-btn block class="secondary">Create Record</v-btn>
+					</div>
+				</v-col>
+			</v-row>
+		</div>
+
+		<h3>DNS Record</h3>
+		<br />
+		<v-simple-table>
+			<thead>
+				<tr>
+					<th>Type</th>
+					<th>Hostname</th>
+					<th>Value</th>
+					<th>TTL (Second)</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr v-for="item in dns" :key="item.hostname">
+					<td>{{ item.type }}</td>
+					<td>{{ item.hostname }}</td>
+					<td><small>redirects to</small> <br />{{ item.value }}</td>
+					<td>{{ item.ttl }}</td>
+					<td>
+						<span class="primary--text edit">Edit</span>
+						<span class="error--text pr-3 delete ml-4">Delete</span>
+					</td>
+				</tr>
+			</tbody>
+		</v-simple-table>
+	</v-container>
+</template>
+
+<script>
+export default {
+	data: () => ({
+		dns: [
+			{
+				type: "NS",
+				hostname: "xxx.yz.yzx",
+				value: "ns1.lintasarta.com",
+				ttl: 1800,
+			},
+		],
+	}),
+};
+</script>
+
+<style scoped>
+.v-btn {
+	height: 50px !important;
+}
+</style>

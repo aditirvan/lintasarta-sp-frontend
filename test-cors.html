@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <script>
+      let url = 'http://103.112.189.11:48774/v2.1/servers'
+      const getData = async () => {
+        const response = await fetch(url, {
+          headers: {
+            'X-Auth-Token': 'gAAAAABgWr6MfJaJjumsN763WbkaqQ62Ykn0GqnewZISee2p9y4mMnLeLn3viuw-18CPtoLf-P4UX2aFpfPdKmNYX2LvqkTpuqFZ_wPPVV45jcQsMR7QNVcx2WYwyL_yupJXIGKgMXnppjNOGifratSpjyqFL4LdoGnIiGOong1jwh4nWsLSZ8E'
+          }
+        })
+        console.log('FETCHING', await response.json())
+      }
+      getData()
+    </script>
+  </body>
+</html>

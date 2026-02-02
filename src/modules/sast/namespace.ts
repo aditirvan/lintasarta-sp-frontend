@@ -1,0 +1,1 @@
+export const I3GIS = "I3GIS"
